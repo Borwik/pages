@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -8,9 +9,78 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
+    <script>
+        function losujKolor() {
+            // Losujemy liczbę od 0 do 4095
+            var liczba = Math.floor(Math.random() * 4096);
+            // Zamieniamy liczbę na łańcuch znaków w systemie szesnastkowym
+            var heks = liczba.toString(16);
+            // Dodajemy zera na początku, jeśli łańcuch ma mniej niż trzy znaki
+            while (heks.length < 3) {
+                heks = "0" + heks;
+            }
+            // Dodajemy znak # na początku łańcucha
+            var kolor = "#" + heks;
+            // Zwracamy losowy kolor
+            return kolor;
+        }
+
+        function czaruj() {
+            let wylosowanyColor = losujKolor()
+            console.log("wypiszemy wylosowany kolor: " + wylosowanyColor)
+            document.getElementById("table1").style.backgroundColor = wylosowanyColor;
+        }
+
+        function nowaFunkcja() {
+            console.log("jestem aktywowany")
+        }
+    </script>
 </head>
+
 <body>
     <h1>Page 2</h1>
     <p>Treść</p>
+    <button onclick="czaruj()" onblur="nowaFunkcja()">Czaruj</button>
+
+    <table id="table1">
+        <tr>
+            <th>Tytuł 1</th>
+            <th>Tytuł 2</th>
+            <th>Tytuł 3</th>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td>E</td>
+            <td>F</td>
+        </tr>
+    </table>
+    <input type="date"/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/><input type="text"> - służy do wprowadzania tekstu w jednej linii, np. imienia, nazwiska, adresu e-mail, itp.
+<br/><input type="password"> - służy do wprowadzania hasła, które jest ukrywane za gwiazdkami lub kropkami, np. przy logowaniu się na stronę.
+<br/><input type="checkbox"> - służy do zaznaczania lub odznaczania opcji, które mogą być wielokrotne, np. zainteresowania, preferencje, itp.
+<br/><input type="radio"> - służy do wybierania jednej z kilku opcji, które są wzajemnie wykluczające, np. płeć, kolor, itp.
+<br/><input type="number"> - służy do wprowadzania liczb, które mogą być ograniczone zakresem, np. wiek, ilość, itp.
+<br/><input type="range"> - służy do wybierania wartości z przedziału za pomocą suwaka, np. głośność, jasność, itp.
+<br/><input type="date"> - służy do wybierania daty z kalendarza, np. urodziny, termin, itp.
+<br/><input type="time"> - służy do wybierania czasu z zegara, np. godzina, minuta, itp.
+<br/><input type="color"> - służy do wybierania koloru z palety, np. tło, czcionka, itp.
+<br/><input type="file"> - służy do wybierania pliku z dysku, np. zdjęcie, dokument, itp.
+<br/><input type="submit"> - służy do wysyłania danych z formularza na serwer, np. przycisk “Wyślij”, “Zapisz”, itp.
+<br/><input type="reset"> - służy do czyszczenia danych z formularza, np. przycisk “Wyczyść”, “Anuluj”, itp.
+<br/><input type="button"> - służy do wykonywania dowolnej akcji za pomocą skryptu JavaScript, np. przycisk “Kliknij”, “Sprawdź”, itp.
 </body>
+
 </html>
